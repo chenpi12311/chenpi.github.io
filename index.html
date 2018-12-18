@@ -91,6 +91,8 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
+				    <li><a href="/categories/Java/" class="animsition-link">Java<small>(1)</small></a></li>
+				    
 				    <li><a href="/categories/RabbitMQ系列/" class="animsition-link">RabbitMQ系列<small>(1)</small></a></li>
 				    
 				</ul>
@@ -210,6 +212,43 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/12/18/Java环境变量的一个小坑/">Java环境变量的一个小坑</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-12-18T03:47:14.000Z" itemprop="datePublished">
+          2018-12-18
+      </time>
+    
+    
+    | 
+    <a href="/tags/java/">java</a>,
+    
+    <a href="/tags/docker-compose/">docker-compose</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        问题描述今天项目在线上部署之后，发现生产环境中有一个配置使用了测试环境的数据。经过排查之后，我将问题定位到了Java获取环境变量的方式上，我原来的代码是这样写的：1234567891011static &#123;	Map&lt;String, String&gt; properties = System.getenv();	String env = properties.getOrDefault("spring.profiles.ac
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/12/18/Java环境变量的一个小坑/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
