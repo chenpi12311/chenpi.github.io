@@ -234,7 +234,9 @@
                 <div class="col-md-8">
                     <p>
                       
-                        
+                        概念RabbitMQ是一个多租户的系统：连接、交换、队列、绑定、用户权限以及其他一些操作都属于virtual hosts上面的逻辑操作。
+客户端连接在一个vhost上的所有连接只能操作该vhost上的exchanges、queues、bindings。一个queue和一个exchange在不同vhost上的情形只可能出现在当一个应用同时连接了两个vhosts。
+相关操作创建一个vhostrabbitmqctl add_vhost che
                       
                     </p>
                     

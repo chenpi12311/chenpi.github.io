@@ -198,7 +198,13 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		
+      		<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>RabbitMQ是一个多租户的系统：连接、交换、队列、绑定、用户权限以及其他一些操作都属于<strong>virtual hosts</strong>上面的逻辑操作。</p>
+<h3 id="客户端连接"><a href="#客户端连接" class="headerlink" title="客户端连接"></a>客户端连接</h3><p>在一个vhost上的所有连接只能操作该vhost上的exchanges、queues、bindings。一个queue和一个exchange在不同vhost上的情形只可能出现在当一个应用同时连接了两个vhosts。</p>
+<h3 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h3><h4 id="创建一个vhost"><a href="#创建一个vhost" class="headerlink" title="创建一个vhost"></a>创建一个vhost</h4><p><code>rabbitmqctl add_vhost chenpi</code></p>
+<h4 id="删除一个vhost"><a href="#删除一个vhost" class="headerlink" title="删除一个vhost"></a>删除一个vhost</h4><p><code>rabbitmqctl delete_vhost chenpi</code></p>
+<h4 id="限制vhost的最大客户端连接数"><a href="#限制vhost的最大客户端连接数" class="headerlink" title="限制vhost的最大客户端连接数"></a>限制vhost的最大客户端连接数</h4><p><code>rabbitmqctl set_vhost_limits -p vhost_name &#39;{&quot;max-connections&quot;: 256}&#39;</code><br>如果不想让客户端进行连接，则将max-connections设置为0:<br><code>rabbitmqctl set_vhost_limits -p vhost_name &#39;{&quot;max-connections&quot;: 0}&#39;</code><br>如果不想限制客户端连接，则将max-connections设置为负数:<br><code>rabbitmqctl set_vhost_limits -p vhost_name &#39;{&quot;max-connections&quot;: -1}&#39;</code></p>
+<h4 id="限制最大队列数"><a href="#限制最大队列数" class="headerlink" title="限制最大队列数"></a>限制最大队列数</h4><p><code>rabbitmqctl set_vhost_limits -p vhost_name &#39;{&quot;max-queues&quot;: 1024}&#39;</code><br>同样，不想限制的话就将max-queues设置为负数:<br><code>rabbitmqctl set_vhost_limits -p vhost_name &#39;{&quot;max-queues&quot;: -1}&#39;</code></p>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
