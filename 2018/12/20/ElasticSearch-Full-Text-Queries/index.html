@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2018/12 | Hexo</title>
+  <title>ElasticSearch-Full Text Queries | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -182,117 +182,105 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 </div>
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/20/ElasticSearch-Full-Text-Queries/">ElasticSearch-Full Text Queries</a></h4>
-                            
-                            <p><time datetime="2018-12-20T14:58:12.000Z"><a href="/2018/12/20/ElasticSearch-Full-Text-Queries/">2018-12-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/20/ElasticSearch-Query/">ElasticSearch-Query</a></h4>
-                            
-                            <p><time datetime="2018-12-20T12:58:02.000Z"><a href="/2018/12/20/ElasticSearch-Query/">2018-12-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/Abstract-Factory/">Abstract Factory</a></h4>
-                            
-                            <p><time datetime="2018-12-18T14:35:08.000Z"><a href="/2018/12/18/Abstract-Factory/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/Java环境变量的一个小坑/">Java环境变量的一个小坑</a></h4>
-                            
-                            <p><time datetime="2018-12-18T03:47:14.000Z"><a href="/2018/12/18/Java环境变量的一个小坑/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/rmq-vhosts-1/">Vhosts</a></h4>
-                            
-                            <p><time datetime="2018-12-18T02:23:10.000Z"><a href="/2018/12/18/rmq-vhosts-1/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/17/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2018-12-17T11:54:25.200Z"><a href="/2018/12/17/hello-world/">2018-12-17</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-12-20T14:58:12.000Z" itemprop="datePublished">
+          2018-12-20
+      </time>
+    
+    
+    | 
+    <a href="/tags/elasticsearch/">elasticsearch</a>,
+    
+    <a href="/tags/query/">query</a>
+    
+    
+</span>
+                <h1>ElasticSearch-Full Text Queries</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="Match-Query"><a href="#Match-Query" class="headerlink" title="Match Query"></a>Match Query</h3><p><code>match</code>查询接收<code>text/numberics/dates</code>,分析它们并且组成一个查询字句。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"message"</span>: <span class="string">"This is a message."</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="match"><a href="#match" class="headerlink" title="match"></a>match</h4><p><code>match</code>查询是<code>boolean</code>类型的。这意味着分析提供的文本，在分析过程中根据提供的文本构造布尔查询。<code>operator</code>字段可以被设置成<code>or</code>或者<code>and</code>来控制布尔字句(默认是or)。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match"</span>: &#123;</span><br><span class="line">      <span class="attr">"message"</span>: &#123;</span><br><span class="line">        <span class="attr">"query"</span>: <span class="string">"this is a test"</span>,</span><br><span class="line">        <span class="attr">"operator"</span>: <span class="string">"and"</span></span><br><span class="line">      &#125; </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="match-phrase"><a href="#match-phrase" class="headerlink" title="match_phrase"></a>match_phrase</h4><p><code>match_phrase</code>和<code>match</code>类似但是被用来精确匹配短语。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase"</span>: &#123;</span><br><span class="line">      <span class="attr">"user_id"</span>: <span class="string">"22663f50-f184-4ab0-9a84-243da0638ff6"</span></span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="match-phrase-prefix"><a href="#match-phrase-prefix" class="headerlink" title="match_phrase_prefix"></a>match_phrase_prefix</h4><p><code>match_phrase_prefix</code>和<code>match_phrase</code>类似只是它允许文本中最后一个术语的前缀匹配，比如查询短语”this is a”，那么他首先会使用<code>match_phrase</code>来匹配<code>this is</code>开头的文档，然后在这些匹配的文档中找出所有以<code>a</code>为前缀的文档：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"match_phrase_prefix"</span>: &#123;</span><br><span class="line">      <span class="attr">"user_id"</span>: &#123;</span><br><span class="line">        <span class="attr">"query"</span>: <span class="string">"22663f50"</span>,</span><br><span class="line">        <span class="attr">"max_expansions"</span>: <span class="number">10</span> # 这个参数控制最后最大的返回结果</span><br><span class="line">      &#125; </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="multi-match-query"><a href="#multi-match-query" class="headerlink" title="multi match query"></a>multi match query</h4><p><code>multi_match</code>允许我们在输入一个搜索内容的时候，支持在某个索引类型下的多个字段中进行搜索。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /_search</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"query"</span>: &#123;</span><br><span class="line">    <span class="attr">"multi_search"</span>: &#123;</span><br><span class="line">      <span class="attr">"query"</span>: <span class="string">"this is a test"</span>,</span><br><span class="line">      <span class="attr">"fields"</span>: [<span class="string">"subject"</span>, <span class="string">"message"</span>]</span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>multi_match</code>会根据<code>fields</code>的顺序从中搜索匹配的文档，例如我们在使用Google的时候，想要查找<code>ElasticSearch</code>相关的内容，那么我们希望如下规则：</p>
+<ol>
+<li>如果标题中包含<code>ElasticSearch</code>则优先取该答案</li>
+<li>如果标题中不包含而内容包含<code>ElasticSearch</code>则取该答案</li>
+</ol>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2018/12/20/ElasticSearch-Query/">
+        ElasticSearch-Query →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2018/12 | Hexo</title>
+  <title>ElasticSearch-Query | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -182,117 +182,102 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 </div>
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/20/ElasticSearch-Full-Text-Queries/">ElasticSearch-Full Text Queries</a></h4>
-                            
-                            <p><time datetime="2018-12-20T14:58:12.000Z"><a href="/2018/12/20/ElasticSearch-Full-Text-Queries/">2018-12-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/20/ElasticSearch-Query/">ElasticSearch-Query</a></h4>
-                            
-                            <p><time datetime="2018-12-20T12:58:02.000Z"><a href="/2018/12/20/ElasticSearch-Query/">2018-12-20</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/Abstract-Factory/">Abstract Factory</a></h4>
-                            
-                            <p><time datetime="2018-12-18T14:35:08.000Z"><a href="/2018/12/18/Abstract-Factory/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/Java环境变量的一个小坑/">Java环境变量的一个小坑</a></h4>
-                            
-                            <p><time datetime="2018-12-18T03:47:14.000Z"><a href="/2018/12/18/Java环境变量的一个小坑/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/18/rmq-vhosts-1/">Vhosts</a></h4>
-                            
-                            <p><time datetime="2018-12-18T02:23:10.000Z"><a href="/2018/12/18/rmq-vhosts-1/">2018-12-18</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/12/17/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2018-12-17T11:54:25.200Z"><a href="/2018/12/17/hello-world/">2018-12-17</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-12-20T12:58:02.000Z" itemprop="datePublished">
+          2018-12-20
+      </time>
+    
+    
+    | 
+    <a href="/tags/elasticsearch/">elasticsearch</a>,
+    
+    <a href="/tags/query/">query</a>
+    
+    
+</span>
+                <h1>ElasticSearch-Query</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="Query-and-Filter-Context"><a href="#Query-and-Filter-Context" class="headerlink" title="Query and Filter Context"></a>Query and Filter Context</h3><p>####Query<br>query字句表示”该文档与此查询字句的匹配程度如何？”。出了确定文档是否匹配之外，query字句还计算一个<code>_score</code>,表示文档相对于其他文档的匹配程度。<br>只要将查询子句传递给查询参数(例如<code>search</code>API中的查询参数),查询上下文就会生效。</p>
+<p>####Filter<br>filter字句表示”该文档是否与查询字句匹配？”，它不会计算<code>_score</code>，只会回答是或者不是。频繁的使用filter会自动被ElasticSearch缓存，以此来加速查询效率。<br>只要将查询子句传给<code>filter</code>参数(例如<code>bool</code>查询中的<code>filter</code>或者<code>must_not</code>参数，<code>constant_score</code>中的<code>filter</code>参数或者<code>filter</code>聚合)。</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "query": &#123; # 表明这是一个查询字句</span><br><span class="line">    "bool": &#123; # bool和两个match字句表示他们被用来计算每一个文档的匹配分数</span><br><span class="line">      "must": [</span><br><span class="line">        &#123; "match": &#123; "title": "Search" &#125; &#125;,</span><br><span class="line">        &#123; <span class="attr">"match"</span>: &#123; <span class="attr">"content"</span>: <span class="string">"ElasticSearch"</span> &#125; &#125;</span><br><span class="line">      ],</span><br><span class="line">      "filter": [ # 表明这是一个filter字句</span><br><span class="line">        &#123; "term": &#123; "status": "published" &#125; &#125;, # term和range在filter字句中会过滤掉不匹配的文档，它们不会影响文档的匹配分数</span><br><span class="line">        &#123; <span class="attr">"range"</span>: &#123; <span class="attr">"publish_date"</span>: &#123; <span class="attr">"gte"</span>: <span class="string">"2015-01-01"</span> &#125; &#125; &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;      </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2018/12/20/ElasticSearch-Full-Text-Queries/" style="float: left;">
+        ← ElasticSearch-Full Text Queries
+    </a>
+    
+    
+    <a class="pull-right" href="/2018/12/18/Abstract-Factory/">
+        Abstract Factory →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
